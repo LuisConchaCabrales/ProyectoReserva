@@ -7,5 +7,7 @@ function cargar() {
 function elegirFecha() {
     fecha = fechareserva.value;
     fechaActual = new Date(Date.now());
-    alert(fecha)
+    if (fecha.getYear) {
+        
+    }
 }
