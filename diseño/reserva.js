@@ -1,7 +1,7 @@
 addEventListener('load', cargar, false);
 
 function cargar() {
-    fechareserva.addEventListener("change", elegirFecha, false);
+    fechaReserva.addEventListener("change", elegirFecha, false);
 }
 
 function elegirFecha() {
