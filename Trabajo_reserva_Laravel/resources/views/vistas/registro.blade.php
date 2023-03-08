@@ -22,7 +22,8 @@
 <body>
     <div class="background">
     </div>
-    <form method="post">
+    <form method="post" action="{{route("usuario.crear")}}">
+        @csrf
         <div class="titulo">
             <h3>Registrar Usuario</h3>
         </div>
@@ -30,10 +31,10 @@
         <div>
 
             <label for="username">Usuario</label>
-            <input type="text" placeholder="Nombre de Usuario" id="username">
+            <input type="text" placeholder="Nombre de Usuario" name="username" id="username">
 
             <label for="password">Contraseña</label>
-            <input type="password" placeholder="Password" id="password">
+            <input type="password" placeholder="Password" name="password" id="password">
 
             <label for="password2">Repetir Contraseña</label>
             <input type="password" placeholder="Repetir Password" id="password2">
@@ -42,16 +43,16 @@
         <div class="derecha">
 
             <label for="name">Nombre</label>
-            <input type="text" placeholder="Nombre propio" id="name">
+            <input type="text" placeholder="Nombre propio" name="name" id="name">
 
-            <label for="apellidos">Apellidos</label>
-            <input type="text" placeholder="Apellido Apellido" id="apellidos">
+            <label for="surname">Apellidos</label>
+            <input type="text" placeholder="Apellido Apellido" name="surname" id="surname">
 
-            <label for="mail">Correo Electrónico</label>
-            <input type="email" placeholder="ejemplo@gmail.com" id="mail">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" placeholder="ejemplo@gmail.com" name="email" id="email">
 
         </div>
-        <button class="inicio">Registrarse</button>
+        <input type="submit" id="crear" class="inicio" value="Registrarse">
     </form>
 </body>
 

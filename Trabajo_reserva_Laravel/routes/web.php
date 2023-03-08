@@ -22,11 +22,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/ejemplo",function(){return view("ejemplo");});
 
-Route::post("/usuario/{usuario}/crear",[UserController::class,"store"])->name("usuario.crear");
+Route::post("/usuario/crear",[UserController::class,"store"])->name("usuario.crear");
 
-Route::post("/portatil/{portatil}/crear",[PortatilController::class,"store"])->name("usuario.crear");
+Route::post("/portatil/crear",[PortatilController::class,"store"])->name("portatil.crear");
 
-Route::post("/reserva/{reserva}/crear",[ReservaController::class,"store"])->name("usuario.crear");
+Route::post("/reserva/crear",[ReservaController::class,"store"])->name("reserva.crear");
 
 Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.resrvas");
 

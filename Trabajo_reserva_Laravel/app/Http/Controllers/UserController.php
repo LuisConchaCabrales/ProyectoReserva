@@ -37,6 +37,7 @@ class UserController extends Controller
         $user->email=$UserRequest["email"];
         $user->password=bcrypt($UserRequest["password"]);
         $user->save();
+        echo "<a href='/login'>iniciar sesion</a>";
     }
 
     /**
