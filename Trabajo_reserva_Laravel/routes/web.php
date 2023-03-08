@@ -27,3 +27,13 @@ Route::post("/usuario/{usuario}/crear",[UserController::class,"store"])->name("u
 Route::post("/portatil/{portatil}/crear",[PortatilController::class,"store"])->name("usuario.crear");
 
 Route::post("/reserva/{reserva}/crear",[ReservaController::class,"store"])->name("usuario.crear");
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
