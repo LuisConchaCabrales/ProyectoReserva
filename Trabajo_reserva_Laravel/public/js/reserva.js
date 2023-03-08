@@ -54,3 +54,40 @@ function obtenerId(e) {
     idPcElegido = e.target.id;
     alert(`Ordenador nº elegido ${idPcElegido}`);
 }
+
+function recogerHoraReserva(e) {
+    horaReserva = e.target.value;
+}
+
+function envioform() {
+    var xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    let url;
+    var datos = new FormData();
+    email = mail.value;
+    contra1 = pass1.value;
+    contra2 = pass2.value;
+    datos.append('envioEmail', idPcElegido);
+    datos.append('envioContra1', fechaReserva);
+    datos.append('envioContra2', idPcElegido);
+    url = "php1.php";
+    xhr.open('POST', url, true);
+    xhr.send(datos);
+    xhr.onreadystatechange = muestracontenido;
+
+    function muestracontenido() {
+
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                divInfo.innerHTML = "recibido " + xhr.responseText;
+            }
+            else {
+                divInfo.innerHTML = "Codigo de error " + xhr.status;
+            }
+        }
+    };
+}
