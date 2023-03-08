@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #6E675F;
+}
+
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.background .shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+form {
+    height: 520px;
+    width: 400px;
+    background-color: #ffffffea;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px #08071099;
+    padding: 50px 35px;
+}
+
+form * {
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+form h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.titulo {
+    height: 50px;
+    width: 300px;
+    background-color: #9FBBCC;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    margin-top: -260px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 10px 0 50px 0;
+}
+
+label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+::placeholder {
+    color: #000000;
+}
+
+button.inicio{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #2841A4;
+    color: #ffffff;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inicio:hover{
+    background-color: #1d338f ;
+}
+
+.registrarse{
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    width: 150px;
+    border-radius: 3px;
+    padding: 5px 10px 10px 5px;
+    background-color: #28A453;
+    color: #eaf0fb;
+    text-align: center;
+    margin-left: 200px;
+    cursor: pointer;
+}
+
+.register {
+    margin-top: 30px;
+    display: flex;
+}
+
+.registrarse:hover {
+    background-color: #1e8f45;
+}
+
+.izquierda{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.derecha{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -208px;
+}

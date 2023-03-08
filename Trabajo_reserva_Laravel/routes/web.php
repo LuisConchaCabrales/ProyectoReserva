@@ -28,6 +28,14 @@ Route::post("/portatil/{portatil}/crear",[PortatilController::class,"store"])->n
 
 Route::post("/reserva/{reserva}/crear",[ReservaController::class,"store"])->name("usuario.crear");
 
+Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.resrvas");
+
+Route::get("/registro",[UserController::class,"index"])->name("vistas.resreva");
+
+
+//Route::get('/reservas',[ReservaController::class,"index"])->name("vistas.reservas")->middleware("auth");
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
