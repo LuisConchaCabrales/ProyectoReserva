@@ -144,3 +144,10 @@ button.inicio{
     top: 50%;
     margin-top: -208px;
 }
+.introsesion{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top:180px;
+    margin-left:-80px;
+}

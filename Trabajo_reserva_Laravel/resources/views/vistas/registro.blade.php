@@ -51,7 +51,7 @@
             <label for="email">Correo Electrónico</label>
             <input type="email" placeholder="ejemplo@gmail.com" name="email" id="email">
 
-            <a href="/login" >iniciar sesion</a>
+            <a href="/login" class="introsesion">iniciar sesion</a>
         </div>
         <input type="submit" id="crear" class="inicio" value="Registrarse">
 
