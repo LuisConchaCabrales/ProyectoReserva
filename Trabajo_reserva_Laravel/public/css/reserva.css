@@ -122,11 +122,11 @@ fieldset {
 
 .botonesReservaOcupado {
     background-color: #A22929;
-    width: 120px;
-    margin: 6px 45px 6px 30px;
+    width: 170px;
+    margin: 6px 150px 6px 180px;
     padding: 10px;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: 3px 3px 8px black;
     border: 0;
     color: white;

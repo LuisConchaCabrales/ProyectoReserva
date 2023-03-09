@@ -13,6 +13,7 @@
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
     <div id="usuario">
@@ -22,8 +23,12 @@
                 sesion</button>
         </form>
     </div>
-    <form action="" method="POST">
-        <input type="number" id="id" name="id" value="<?php echo Auth::user()->id; ?>" hidden>
+    <form method="POST" action="{{route('reserva.crear')}}">
+        @csrf
+        @method("put")
+        <input type="number" id="idUser" name="id_usuario" value="<?php echo Auth::user()->id; ?>" hidden>
+        <input type="text" name="dia" hidden value="" id="dia">
+        <input type="text" name="turno" hidden value="" id="turnoEnvio">
         <fieldset id="imagenesOrdenador">
             <legend><a class="centrar">Selecciona ordenador</a></legend>
         </fieldset>
@@ -41,8 +46,10 @@
         <button id="reser">Reservar</button>
     </form>
     <button id="borrar">Borrar seleccion</button>
-    <div id="info"></div>
 
+    <?php
+        $resereva=new Reserva();
+    ?>
 </body>
 
 </html>

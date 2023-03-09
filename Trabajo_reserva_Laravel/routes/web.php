@@ -29,12 +29,12 @@ Route::post("/usuario/crear",[UserController::class,"store"])->name("usuario.cre
 
 Route::post("/portatil/crear",[PortatilController::class,"store"])->name("portatil.crear");
 
-Route::post("/reserva/crear",[ReservaController::class,"store"])->name("reserva.crear");
+Route::put("/reserva/crear/{resereva}",[ReservaController::class,"store"])->name("reserva.crear");
 
 
 Route::get("/registro",[UserController::class,"create"])->name("vistas.registro");
 
-Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.reservas");
+Route::post("/reservas",[ReservaController::class,"index"])->name("vistas.reservas");
 
 Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.reservas")->middleware("auth");
 
