@@ -15,7 +15,7 @@ class PortatilController extends Controller
     public function index()
     {
         $portatiles=Portatil::all();
-        return response()->json($portatiles);
+        echo response()->json($portatiles);
     }
 
     /**

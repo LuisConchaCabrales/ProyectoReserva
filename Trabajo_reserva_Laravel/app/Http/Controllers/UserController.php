@@ -29,7 +29,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view("vistas.registro");
+        $usuarios=User::all();
+        echo response()->json($usuarios);
     }
 
     /**
