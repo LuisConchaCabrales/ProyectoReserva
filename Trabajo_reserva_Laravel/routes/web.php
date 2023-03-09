@@ -24,17 +24,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/",[UserController::class,"inicioSesion"]);
 
+
 Route::post("/usuario/crear",[UserController::class,"store"])->name("usuario.crear");
 
 Route::post("/portatil/crear",[PortatilController::class,"store"])->name("portatil.crear");
 
 Route::post("/reserva/crear",[ReservaController::class,"store"])->name("reserva.crear");
 
-Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.resrvas");
 
-Route::get("/registro",[UserController::class,"index"])->name("vistas.registro");
+Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.reservas");
 
-Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.resrvas")->middleware("auth");
+Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.reservas")->middleware("auth");
+
+
+Route::post("/usuarios/datos",[UserController::class,"index"])->name("vistas.registro");
+
+Route::post("/datos",[ReservaController::class,"datos"])->name("reservas.datos");
+
+Route::post("/portatiles",[PortatilController::class,"index"])->name("portatiles.index");
+
+
 
 Route::post('/logout', [UserController::class,'logout'])->name('logout');
 

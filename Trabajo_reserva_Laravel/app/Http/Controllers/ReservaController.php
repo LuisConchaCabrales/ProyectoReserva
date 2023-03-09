@@ -9,6 +9,12 @@ use App\Models\User;
 
 class ReservaController extends Controller
 {
+    public function datos()
+    {
+        $reservas=Reserva::all();
+        echo response()->json($reservas);
+    }
+
     /**
      * Display a listing of the resource.
      */
