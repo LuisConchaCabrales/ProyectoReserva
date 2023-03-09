@@ -72,7 +72,8 @@ class UserController extends Controller
         }
         else
         {
-            echo "<a href='/registro'>error en las contraseñas</a>";
+            return view("vistas.registro");
+            //echo "<a href='/registro'>error en las contraseñas</a>";
         }
     }
 

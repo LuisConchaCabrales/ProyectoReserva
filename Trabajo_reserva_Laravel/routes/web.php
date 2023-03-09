@@ -29,7 +29,7 @@ Route::post("/usuario/crear",[UserController::class,"store"])->name("usuario.cre
 
 Route::post("/portatil/crear",[PortatilController::class,"store"])->name("portatil.crear");
 
-Route::put("/reserva/crear/{resereva}",[ReservaController::class,"store"])->name("reserva.crear");
+Route::put("/reserva/crear",[ReservaController::class,"store"])->name("reserva.crear");
 
 
 Route::get("/registro",[UserController::class,"create"])->name("vistas.registro");

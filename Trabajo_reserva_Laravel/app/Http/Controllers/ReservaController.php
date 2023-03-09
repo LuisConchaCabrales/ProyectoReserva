@@ -37,19 +37,13 @@ class ReservaController extends Controller
     public function store(Request $ReservaRequest)
     {
         $reserva=new Reserva();
-        $reserva->id_usuario=$ReservaRequest["id_usuario"];
-        $reserva->id_portatil=$ReservaRequest["id_portatil"];
+        $reserva->user_id=$ReservaRequest["id_usuario"];
+        $reserva->portatil_id=$ReservaRequest["id_portatil"];
         $reserva->dia=$ReservaRequest["dia"];
         $reserva->hora=$ReservaRequest["hora"];
         $reserva->turno=$ReservaRequest["turno"];
-        if($reserva->save())
-        {
-            response()->json(true);
-        }
-        else
-        {
-            response()->json(false);
-        }
+        $reserva->save();
+        return view("vistas.reserva");
     }
 
     /**

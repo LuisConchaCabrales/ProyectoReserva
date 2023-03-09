@@ -29,6 +29,8 @@
         <input type="number" id="idUser" name="id_usuario" value="<?php echo Auth::user()->id; ?>" hidden>
         <input type="text" name="dia" hidden value="" id="dia">
         <input type="text" name="turno" hidden value="" id="turnoEnvio">
+        <input type="text"  name="id_portatil" hidden value="" id="idPortatil">
+        <input type="text"  name="hora" hidden value="" id="hora">
         <fieldset id="imagenesOrdenador">
             <legend><a class="centrar">Selecciona ordenador</a></legend>
         </fieldset>
@@ -46,10 +48,6 @@
         <button id="reser">Reservar</button>
     </form>
     <button id="borrar">Borrar seleccion</button>
-
-    <?php
-        $resereva=new Reserva();
-    ?>
 </body>
 
 </html>

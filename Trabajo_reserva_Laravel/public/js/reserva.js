@@ -19,12 +19,16 @@ function cargar() {
     borrar.addEventListener("click", reiniciarDatos, false);
 }
 
-function realizarReserva() {
-    dia.value = fechaComprobacion;
-    turnoEnvio.value = turno;
+function realizarReserva(e) {
     if (horaReserva == null) {
         alert("Elige un boton con una hora disponible");
+        e.preventDefault();
     } else {
+        dia.value = fechaComprobacion;
+        turnoEnvio.value = turno;
+        hora.value=horaReserva;
+        idPortatil.value=idPcElegido;
+
         alert(`El portatil numero ${idPcElegido}
 ha sido reservado el dia ${fechaReserva.toLocaleDateString("es")}
 a la hora ${horaReserva} del turno de ${turno}`);
@@ -101,7 +105,7 @@ function botonTarde(turnoTardeOcupado, i) {
         let inp = document.createElement("input");
         inp.type = "button";
         inp.value = turnosTarde[i];
-        inp.id = i;
+        inp.id = i+turnosTarde.length;
         inp.name = "hora";
         inp.className = "botonesReservaOcupado";
         inp.disabled = true;
@@ -111,7 +115,7 @@ function botonTarde(turnoTardeOcupado, i) {
         let inp = document.createElement("input");
         inp.type = "button";
         inp.value = turnosTarde[i];
-        inp.id = i;
+        inp.id = i+turnosTarde.length;
         inp.name = "hora";
         inp.className = "botonesReservaLibre";
         inp.addEventListener("click", recogerHoraReserva, false);
@@ -162,7 +166,7 @@ function obtenerId(e) {
 function recogerHoraReserva(e) {
     horaReserva = e.target.value;
     alert(`Hora elegida ${horaReserva}`);
-    if (e.target.id <= 5) {
+    if (e.target.id < turnosMañana.length) {
         turno = "mañana";
     } else {
         turno = "tarde"
