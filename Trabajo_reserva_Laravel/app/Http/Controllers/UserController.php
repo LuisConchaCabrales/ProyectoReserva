@@ -6,15 +6,30 @@ use Illuminate\Http\Request;
 use App\Models\Portatil;
 use App\Models\Reserva;
 use App\Models\User;
+use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function inicioSesion()
+    {
+        return redirect()->action([ReservaController::class,"index"]);
+    }
+
+    public function logout(Request $resquest)
+    {
+        Auth::logout();
+        $resquest->session()->invalidate();
+        $resquest->session()->regenerateToken();
+        return redirect("/");
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view("vistas.registro");
     }
 
     /**
@@ -35,8 +50,29 @@ class UserController extends Controller
         $user->surname=$UserRequest["surname"];
         $user->username=$UserRequest["username"];
         $user->email=$UserRequest["email"];
-        $user->password=bcrypt($UserRequest["password"]);
-        $user->save();
+        if($UserRequest["password"]==$UserRequest["password2"])
+        {
+            $user->password=bcrypt($UserRequest["password"]);
+            try
+            {
+                $user->save();
+                echo "<a href='/login'>iniciar sesion</a>";
+            }
+            catch(Exception)
+            {
+                echo "<p>inicio se sesion ya existente</p>";
+                echo "<p>";
+                echo "<a href='/registro'>registrar otra cuenta</a>";
+                echo "</p>";
+                echo "<p>";
+                echo "<a href='/login'>iniciar sesion</a>";
+                echo "</p>";
+            }
+        }
+        else
+        {
+            echo "<a href='/registro'>error en las contraseñas</a>";
+        }
     }
 
     /**

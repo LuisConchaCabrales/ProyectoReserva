@@ -14,7 +14,7 @@ class ReservaController extends Controller
      */
     public function index()
     {
-        //
+        return view("vistas.reserva");
     }
 
     /**
