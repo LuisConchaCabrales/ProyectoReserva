@@ -56,7 +56,7 @@ class UserController extends Controller
             try
             {
                 $user->save();
-                echo "<a href='/login'>iniciar sesion</a>";
+                return redirect('/login');
             }
             catch(Exception)
             {
