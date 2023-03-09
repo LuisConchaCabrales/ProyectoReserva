@@ -37,7 +37,7 @@
             <input type="password" placeholder="Password" name="password" id="password">
 
             <label for="password2">Repetir Contraseña</label>
-            <input type="password" placeholder="Repetir Password" id="password2">
+            <input type="password" placeholder="Repetir Password" name="password2" id="password2">
 
         </div>
         <div class="derecha">
@@ -51,9 +51,12 @@
             <label for="email">Correo Electrónico</label>
             <input type="email" placeholder="ejemplo@gmail.com" name="email" id="email">
 
+            <a href="/login" >iniciar sesion</a>
         </div>
         <input type="submit" id="crear" class="inicio" value="Registrarse">
+
     </form>
+
 </body>
 
 </html>

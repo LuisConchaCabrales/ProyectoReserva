@@ -51,10 +51,14 @@
 </style>
 
 <body>
-    <form action="reserva.html" method="POST">
+
         <div id="usuario">
-            <span id="textoConexion">Bienvenido xxxxxxx</span> <button class="botonRojo">Cerrar sesion</button>
+            <form method="post" action="{{route("logout")}}">
+                @csrf
+                <span id="textoConexion">Bienvenido <?php echo Auth::user()->name  ?></span> <button class="botonRojo" >Cerrar sesion</button>
+            </form>
         </div>
+        <form action="" method="POST">
         <fieldset id="imagenesOrdenador">
             <legend><a class="centrar">Selecciona ordenador</a></legend>
         </fieldset>

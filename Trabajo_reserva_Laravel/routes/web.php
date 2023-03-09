@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PortatilController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\UserController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +22,7 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-Route::get("/ejemplo",function(){return view("ejemplo");});
+Route::get("/",[UserController::class,"inicioSesion"]);
 
 Route::post("/usuario/crear",[UserController::class,"store"])->name("usuario.crear");
 
@@ -30,8 +32,11 @@ Route::post("/reserva/crear",[ReservaController::class,"store"])->name("reserva.
 
 Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.resrvas");
 
-Route::get("/registro",[UserController::class,"index"])->name("vistas.resreva");
+Route::get("/registro",[UserController::class,"index"])->name("vistas.registro");
 
+Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.resrvas")->middleware("auth");
+
+Route::post('/logout', [UserController::class,'logout'])->name('logout');
 
 //Route::get('/reservas',[ReservaController::class,"index"])->name("vistas.reservas")->middleware("auth");
 
