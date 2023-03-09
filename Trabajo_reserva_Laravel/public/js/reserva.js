@@ -97,7 +97,7 @@ function recogerHoraReserva(e) {
     }
 }
 
-function envioform() {
+/*function envioform() {
     var xhr;
     if (window.XMLHttpRequest) {
         xhr = new XMLHttpRequest();
@@ -122,14 +122,14 @@ function envioform() {
 
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-                divInfo.innerHTML = "recibido " + xhr.responseText;
+                info.innerHTML = "recibido " + xhr.responseText;
             }
             else {
-                divInfo.innerHTML = "Codigo de error " + xhr.status;
+                info.innerHTML = "Codigo de error " + xhr.status;
             }
         }
     };
-}
+}*/
 
 function recogerReservas() {
 
@@ -139,7 +139,7 @@ function recogerReservas() {
     } else if (window.ActiveXObject) {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xhr.open('GET', "{{ route('reservas.datos') }}", true);
+    xhr.open('GET', "/usuarios/datos", true);
     xhr.send(null);
     xhr.onreadystatechange = muestracontenido;
 
@@ -157,7 +157,57 @@ function recogerReservas() {
     };
 };
 
+function recogerPortatiles() {
+    var xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhr.open('GET', "/portatiles/datos", true);
+    xhr.send(null);
+    xhr.onreadystatechange = muestracontenido;
 
+    function muestracontenido() {
+
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                let datos = JSON.parse(xhr.responseText);
+                info.innerHTML = datos;
+            }
+            else {
+                info.innerHTML = "Codigo de error " + xhr.status;
+            }
+        }
+    };
+}
+
+function recogerReservas() {
+    var xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhr.open('GET', "/reservas/datos", true);
+    xhr.send(null);
+    xhr.onreadystatechange = muestracontenido;
+
+    function muestracontenido() {
+
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                let datos = JSON.parse(xhr.responseText);
+                info.innerHTML = datos;
+            }
+            else {
+                info.innerHTML = "Codigo de error " + xhr.status;
+            }
+        }
+    };
+}
+
+/*
 $.ajax({
     url: "{{ route('reservas.datos') }}",
     type: 'POST',
@@ -174,4 +224,5 @@ $.ajax({
 
     }
 });
+*/
 
