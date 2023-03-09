@@ -32,12 +32,14 @@ Route::post("/portatil/crear",[PortatilController::class,"store"])->name("portat
 Route::post("/reserva/crear",[ReservaController::class,"store"])->name("reserva.crear");
 
 
+Route::get("/registro",[UserController::class,"create"])->name("vistas.registro");
+
 Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.reservas");
 
 Route::get("/reservas",[ReservaController::class,"index"])->name("vistas.reservas")->middleware("auth");
 
 
-Route::get("/usuarios/datos",[UserController::class,"index"])->name("vistas.registro");
+Route::get("/usuarios/datos",[UserController::class,"index"])->name("usuarios.datos");
 
 Route::get("/reservas/datos",[ReservaController::class,"datos"])->name("reservas.datos");
 

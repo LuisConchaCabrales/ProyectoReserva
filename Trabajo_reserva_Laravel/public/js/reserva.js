@@ -11,7 +11,7 @@ var idPcElegido = 0;
 var turno;
 function cargar() {
     introducirOrdenadores();
-    recogerReservas();
+    recogerUsuarios();
     fechaReservaUsuario = document.querySelector("#fechaReservaUsuario");
     fechaReservaUsuario.addEventListener("change", elegirFecha, false);
     reser.addEventListener("click", realizarReserva, false);
@@ -74,7 +74,7 @@ function elegirFecha() {
 function introducirOrdenadores() {
     for (let i = 0; i < 10; i++) {
         let ima = document.createElement("img");
-        ima.src = "ordenador.png";
+        ima.src = "../img/ordenador.png";
         ima.className = "PC";
         ima.id = i + 1;
         ima.addEventListener("click", obtenerId, false);
@@ -131,7 +131,7 @@ function recogerHoraReserva(e) {
     };
 }*/
 
-function recogerReservas() {
+function recogerUsuarios() {
 
     var xhr;
     if (window.XMLHttpRequest) {
@@ -139,7 +139,7 @@ function recogerReservas() {
     } else if (window.ActiveXObject) {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xhr.open('GET', "/usuarios/datos", true);
+    xhr.open('GET', "usuarios/datos", true);
     xhr.send(null);
     xhr.onreadystatechange = muestracontenido;
 
@@ -148,7 +148,7 @@ function recogerReservas() {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
                 let datos = JSON.parse(xhr.responseText);
-                info.innerHTML = datos;
+                document.querySelector("#info").innerHTML = datos;
             }
             else {
                 info.innerHTML = "Codigo de error " + xhr.status;
