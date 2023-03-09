@@ -13,47 +13,6 @@
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
 </head>
-<style>
-    #mañana {
-        display: none;
-    }
-
-    .botonesReservaLibre {
-        background-color: #28A453;
-        width: 170px;
-        margin: 6px 150px 6px 180px;
-        padding: 10px;
-        height: 50px;
-        border-radius: 16px;
-        box-shadow: 3px 3px 8px black;
-        border: 0;
-        color: white;
-    }
-
-    .botonesReservaOcupado {
-        background-color: #A22929;
-        width: 120px;
-        margin: 6px 45px 6px 30px;
-        padding: 10px;
-        height: 50px;
-        border-radius: 10px;
-        box-shadow: 3px 3px 8px black;
-        border: 0;
-        color: white;
-    }
-
-    .PC {
-        width: 210px;
-        height: 180px;
-        margin: -10px 40px 10px 40px;
-        padding: 8px;
-    }
-
-    #tarde {
-        display: none;
-    }
-</style>
-
 <body>
 
     <div id="usuario">
